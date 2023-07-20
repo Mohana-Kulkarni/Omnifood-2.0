@@ -321,6 +321,7 @@ Greys: #555
 /*************************/
 /* TESTIMONIAL SECTION */
 /*************************/
+
 .section-testimonial {
   background-color: #fdf2e9;
   display: grid;
@@ -613,4 +614,125 @@ Greys: #555
 .footer-link:hover,
 .footer-link:active {
   color: #555;
+}
+
+/*************************/
+/* LOGIN */
+/*************************/
+
+.img-box {
+  height: 100vh;
+        position: relative;
+        background-image: linear-gradient(
+            rgba(34, 34, 34, 0.6),
+            rgba(34, 34, 34, 0.6)
+          ),
+          url("../img/login-img.jpg");
+        background-size: cover;
+        color: #fff;
+}
+
+.header-container {
+  width: 1200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.header-container--inner {
+  width: 50%;
+}
+
+.section-login {
+  padding: 4.8rem 0 12.8rem 0;
+}
+
+.form-container {
+  padding: 0 3.2rem;
+  margin: 0 0 0 5%;
+  position: absolute;  
+  top: 50%;
+  transform: translate(10%, -50%);
+}
+
+.login {
+  width: 40rem;
+  display: block;
+  background-color: #e67d2257;
+  border-color: #cf711f;
+  border-width: 2px;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+  border-radius: 11px;
+  overflow: hidden;
+
+}
+
+.login-text-box{
+  color: #45260a;
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+}
+
+.login .heading-secondary {
+  color: #fdf2e9;
+  margin-bottom: 0;
+  font-weight: 300;
+  text-align: center;
+}
+
+.login-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 4.8rem;
+}
+
+.login-form{
+  align-items: center;
+  justify-content: center;
+  padding: 0 3.2rem 6.4rem 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+}
+
+.input-fields {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.login-form label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  font-family: inherit;
+  border: none;
+  color: inherit;
+  background-color: #fdf2e9;
+  border-radius: 9px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.login-form input::placeholder {
+  color: #aaa;
+}
+
+.login *:focus {
+  outline: none;
+  box-shadow: 0 0 0.8rem rgba(253, 241, 232, 0.5);
+} 
+
+.login-btn {
+  width: 60%;
+  background-color: #45260a;
+  color: #fdf2e9;
+  padding: 1.2rem;
 }
