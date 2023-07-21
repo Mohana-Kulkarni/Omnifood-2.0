@@ -12,28 +12,28 @@ btnNavEl.addEventListener("click", function () {
 });
 
 ///////////////////////////////////////////////////////////
-const allLinks = document.querySelectorAll("a:link");
+// const allLinks = document.querySelectorAll("a:link");
 
-allLinks.forEach(function (link) {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-    const href = link.getAttribute("href");
+// allLinks.forEach(function (link) {
+//   link.addEventListener("click", function (e) {
+//     // e.preventDefault();
+//     const href = link.getAttribute("href");
 
-    if (href === "#")
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+    // if (href === "#")
+    //   window.scrollTo({
+    //     top: 0,
+    //     behavior: "smooth",
+    //   });
 
-    if (href !== "#" && href.startsWith("#")) {
-      const sectionEl = document.querySelector(href);
-      sectionEl.scrollIntoView({ behavior: "smooth" });
-    }
+    // if (href !== "#" && href.startsWith("#")) {
+    //   const sectionEl = document.querySelector(href);
+    //   sectionEl.scrollIntoView({ behavior: "smooth" });
+    // }
 
-    if (link.classList.contains("main-nav-link"))
-      headerEl.classList.toggle("nav-open");
-  });
-});
+    // if (link.classList.contains("main-nav-link"))
+    //   headerEl.classList.toggle("nav-open");
+//   });
+// });
 
 ///////////////////////////////////////////////////////////
 // Sticky navigation
