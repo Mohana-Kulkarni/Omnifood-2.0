@@ -736,3 +736,34 @@ Greys: #555
   color: #fdf2e9;
   padding: 1.2rem;
 }
+
+.login-btn-render {
+  width: 60%;
+  background-color: transparent;
+  color: #45260a;
+  padding: 1.2rem;
+  margin-bottom: 6.4rem;
+  /* opacity: 0; */
+}
+
+.signup-link:link,
+.signup-link:visited {
+  color: #45260a;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 0.2rem;
+  transition: all 0.3s;
+}
+
+.signup-link:hover,
+.signup-link:active {
+  color: #cf711f;
+  border-bottom: 1px solid transparent;
+}
+
+.signup-div-link {
+  /* margin-top: 2.4rem; */
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
