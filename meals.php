@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,7 +60,10 @@
     </div>
 
     <div class="container grid grid--3-cols margin-bottom-md">
-      <div class="meal">
+      <?php include "components/meal.php"; ?>
+
+
+      <!-- <div class="meal">
         <img src="img/meals/meal-1.jpg" class="meal-img" alt="Japanese Gyozas" />
         <div class="meal-content">
           <div class="meal-tags">
@@ -79,9 +83,9 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div>-->
       <!-- Meal 2 -->
-      <div class="meal">
+      <!-- <div class="meal">
         <img src="img/meals/meal-2.jpg" class="meal-img" alt="Avocado Salad" />
         <div class="meal-content">
           <div class="meal-tags">
@@ -102,10 +106,10 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
 
       <!-- Meal 3 -->
-      <div class="meal">
+      <!-- <div class="meal">
         <img src="img/meals/meal-2.jpg" class="meal-img" alt="Avocado Salad" />
         <div class="meal-content">
           <div class="meal-tags">
@@ -126,8 +130,8 @@
                 (441)</span>
             </li>
           </ul>
-        </div>
-      </div>
+        </div> -->
+    </div>
   </section>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
