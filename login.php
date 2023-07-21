@@ -34,12 +34,12 @@
           </div> 
       </section>-->
       <section class="section-login" id="login">
-        
+        <?php include"components/login-form.php"; ?>
       </section>
     </div>
 
   </div>
-  <script defer src="js/loginScript.js"></script>
+  <!-- <script defer src="js/loginScript.js"></script> -->
 
 </body>
 

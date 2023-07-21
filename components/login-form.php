@@ -16,7 +16,7 @@
       </div>
       <button class="btn login-btn">Login</button>
       <div class="signup-div-link">
-        <a class="signup-link render-login" href="#">Not a member yet ? Signup</a>
+        <a class="signup-link" href="signup.php">Not a member yet ? Signup</a>
       </div>
     </form>
     <!-- <button class="btn login-btn-render render-login">Not a member yet ? Signup</button> -->
