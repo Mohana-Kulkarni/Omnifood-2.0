@@ -9,7 +9,35 @@
     die('Query Failed'.mysqli_error());
   }
 
-  while($row = mysqli_fetch_assoc($res)) {
+  $all_cards = array();
+  $card_present = false;
+  while ($row = mysqli_fetch_assoc($res)) {
+    $newId = $row['id'];
+    if (count($all_cards) != 0) {
+      foreach ($all_cards as &$card) {
+        if ($card['id'] == $newId) {
+          array_push($card['tags'], $row['name']);
+          $card_present = true;
+          break;
+        }
+      }
+    }
+    if (!$card_present) {
+      $card_data = array();
+      $card_data['id'] = $row['id'];
+      $card_data['title'] = $row['title'];
+      $card_data['calories'] = $row['calories'];
+      $card_data['nutriscore'] = $row['nutriscore'];
+      $card_data['ratings'] = $row['ratings'];
+      $card_data['votes'] = $row['votes'];
+      $card_data['image_name'] = $row['image_name'];
+      $card_data['price'] = $row['price']; 
+      $card_data['tags'] = array($row['name']); 
+      array_push($all_cards, $card_data);
+    }
+  }
+
+  foreach ($all_cards as $row) {
     $title = $row['title'];
     $calories = $row['calories'];
     $nutriscore = $row['nutriscore'];
@@ -17,14 +45,23 @@
     $votes = $row['votes'];
     $img_name = $row['image_name'];
     $price = $row['price'];
-
+    $tags = $row['tags'];
     ?>
 
     <div class="meal">
     <img src="img/meals/<?php echo $img_name; ?>.jpg" class="meal-img" alt="<?php echo $title; ?>" />
     <div class="meal-content">
       <div class="meal-tags">
-        <span class="tag tag--vegetarian"> Vegetarian</span>
+        <?php 
+          foreach ($tags as $tag) {
+            ?>
+            <span class="tag tag--<?php echo strtolower($tag) ?>"><?php echo $tag ?></span>
+            <?php
+          }
+        ?>
+        </div>
+      <div>
+          
       </div>
       <p class="meal-title"><?php echo $title; ?></p>
       <ul class="meal-attributes">
@@ -39,12 +76,14 @@
           <ion-icon class="meal-icon" name="star-outline"></ion-icon><span> <strong><?php echo $ratings; ?></strong> rating (<?php echo $votes; ?>)</span>
         </li>
       </ul>
+      <div class="card-price-div">
+        <strong>
+          <span class="card-price" >&#8377;<?php echo $price ?></span>
+        </strong>
+      </div>
     </div>
   </div>
-
-
     <?php
-
   }
 ?>
 

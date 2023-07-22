@@ -264,6 +264,7 @@ Greys: #555
 .meal-tags {
   margin-bottom: 1.2rem;
   display: flex;
+  flex-wrap: wrap;
   gap: 0.4rem;
 }
 .tag {
@@ -766,4 +767,25 @@ Greys: #555
   text-align: center;
   font-size: 1.8rem;
   font-weight: bold;
+}
+
+
+/*************************/
+/* CARD */
+/*************************/
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card-price-div {
+  margin-top: 3.2rem;
+}
+
+.card-price {
+  font-size: 2.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
 }

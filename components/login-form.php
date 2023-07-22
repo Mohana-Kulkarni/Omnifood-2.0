@@ -19,6 +19,5 @@
         <a class="signup-link" href="signup.php">Not a member yet ? Signup</a>
       </div>
     </form>
-    <!-- <button class="btn login-btn-render render-login">Not a member yet ? Signup</button> -->
   </div>
 </div>

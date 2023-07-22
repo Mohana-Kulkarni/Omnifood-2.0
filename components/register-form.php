@@ -20,6 +20,6 @@
       </div>
       <button class="btn login-btn">Signup</button>
     </form>
-    <!-- <button class="btn login-btn-render render-login">Login</button> -->
+  
   </div>
 </div>
