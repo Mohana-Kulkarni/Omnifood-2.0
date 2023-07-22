@@ -789,3 +789,13 @@ Greys: #555
   align-items: center;
   gap: 1.6rem;
 }
+
+.btn-round {
+  width: 50%;
+  font-size: 2rem;
+  background-color: #333;
+  color: white;
+  padding: 1.2rem;
+  border-radius: 50%;
+  align-items: end;
+}
