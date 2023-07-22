@@ -83,7 +83,7 @@
             <strong>
               <span class="card-price" >&#8377;<?php echo $price ?></span>
             </strong>
-            <button class="btn-round">+</button>
+            <button class="btn-round"><img class="add-icon" src="img/icons/add.svg" alt="add-icon" /></button>
           </div>
         </div>
       </div>

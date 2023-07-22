@@ -791,6 +791,7 @@ Greys: #555
 }
 
 .card-price-div {
+  position: relative;
   margin-top: 3.2rem;
 }
 
@@ -802,11 +803,21 @@ Greys: #555
 }
 
 .btn-round {
-  width: 50%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 5rem;
+  height: 5rem;
   font-size: 2rem;
   background-color: #333;
   color: white;
   padding: 1.2rem;
   border-radius: 50%;
-  align-items: end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-icon {
+  width: 2rem;
 }
