@@ -36,9 +36,8 @@
       $card_data['tags'] = array($row['name']); 
       array_push($all_cards, $card_data);
     }
+    $card_present = false;
   }
-  
-  //print_r($all_cards);
 
   foreach ($all_cards as $row) {
     $title = $row['title'];
@@ -52,7 +51,9 @@
     ?>
 
     <div class="meal">
-      <img src="img/meals/<?php echo $img_name; ?>.jpg" class="meal-img" alt="<?php echo $title; ?>" />
+      <div class="meal-img-div">
+        <img src="img/meals/<?php echo $img_name; ?>.jpg" class="meal-img" alt="<?php echo $title; ?>" />
+      </div>
       <div class="meal-content">
         <div class="meal-tags">
         <?php 
