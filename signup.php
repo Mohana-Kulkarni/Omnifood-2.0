@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,6 +36,7 @@
       </section>-->
       <section class="section-login" id="login">
         <?php include"components/register-form.php"; ?>
+  
       </section>
     </div>
 
