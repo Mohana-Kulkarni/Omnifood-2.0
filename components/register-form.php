@@ -5,33 +5,18 @@
 ?>
 
 <?php
+  $flag = false;
 
   if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $_POST['user-name'];
     $email = $_POST['email-id'];
     $password = $_POST['pass-word'];
 
-    if(!isEmpty($username, $email, $password)) {
-      echo "YES";
-    }
-    if(isValidEmail($email)) {
-      echo "True";
+    if(!isEmpty($username, $email, $password) && isValidEmail($email) && isEmailTaken($con, $email)) {
+      insertUserData($con, $username, $email, $password);
     } else {
-      echo "False";
+      $flag = true;
     }
-
-    if(isValidUser($con, $username, $email)) {
-      echo "Yes";
-    }else {
-      echo "No";
-    }
-    $hash = "$2y$10";
-    $salt = "ilikecrazystrings";
-
-    $hash_salt = $hash.$salt.$password;
-    $password = hash("sha256", $hash_salt);
-
-
   }
 
 ?>
@@ -42,6 +27,17 @@
     <div class="login-text-box">
       <h1 class="heading-secondary">Register</h1>
     </div>
+    
+    <div class="error-msg">
+      <?php 
+        if ($flag) {
+          ?>
+          <p>Enter valid data</p>
+          <?php
+        }
+      ?>
+    </div>
+
     <form class="login-form" action="signup.php" method="post">
       <div class="input-fields">
         <div>

@@ -949,3 +949,12 @@ Greys: #555
   position: absolute;
   width: 2rem;
 }
+
+.error-msg {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  display: flex;
+  justify-content: center;
+  color: #45260a;
+}
