@@ -12,15 +12,14 @@
     $email = $_POST['email-id'];
     $password = $_POST['pass-word'];
 
-    if(!isEmpty($username, $email, $password) && isValidEmail($email) && isEmailTaken($con, $email)) {
+    if(!isEmptySignup($username, $email, $password) && isValidEmail($email) && isEmailTaken($con, $email)) {
       insertUserData($con, $username, $email, $password);
+      header("Location: ./login.php");
     } else {
       $flag = true;
     }
   }
-
 ?>
-
 
 <div class="form-container">
   <div class="login">

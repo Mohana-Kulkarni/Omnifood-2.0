@@ -36,4 +36,23 @@ function insert_user_data($con, $username, $email, $password) {
   }
 }
 
+function getPassword($con, $username) {
+  $uName = mysqli_real_escape_string($con, $username);
+  $query = "SELECT password FROM users WHERE username = ?";
+  $stmt = mysqli_prepare($con, $query);
+  mysqli_stmt_bind_param($stmt, "s", $username);
+
+  if(!mysqli_stmt_execute($stmt)) {
+    die('Query Failed'.mysqli_error());
+  }
+  $res = mysqli_stmt_get_result($stmt);
+  $res_data = array();
+  while ($row = mysqli_fetch_array($res, MYSQLI_NUM)) {
+    foreach ($row as $r) {
+      array_push($res_data, $r);
+    }
+  }
+  return $res_data;
+}
+
 ?>

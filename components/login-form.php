@@ -1,9 +1,44 @@
+<?php 
+      include "db.php";
+      include "models/user_model.php"; 
+      include "controllers/validate_user.php"; 
+?>
+
+<?php 
+  $flag = false;
+  if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $username = $_POST['user-name'];
+    $password = $_POST['pass-word'];
+
+    if(!(!isEmptyLogin($username, $password) && isValidUser($con, $username))) {
+      if (isAccountValid($con, $username, $password)) {
+        //Create session
+        // echo "Create Session";
+        header("Location: ./index.html"); 
+      } else {
+        $flag = true;
+      }
+    } else {
+      $flag = true;
+    }
+  }
+?>
+
 <div class="form-container">
   <div class="login">
     <div class="login-text-box">
       <h1 class="heading-secondary">Login</h1>
     </div>
-    <form class="login-form" action="index.html" method="post">
+    <div class="error-msg">
+      <?php 
+        if ($flag) {
+          ?>
+          <p>Enter valid data</p>
+          <?php
+        }
+      ?>
+    </div>
+    <form class="login-form" action="login.php" method="post">
       <div class="input-fields">
         <div>
           <label for="user-name">Username</label>
