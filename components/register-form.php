@@ -1,7 +1,7 @@
 <?php 
       include "db.php";
       include "models/user_model.php"; 
-      include"controllers/validate_user.php"; 
+      include "controllers/validate_user.php"; 
 ?>
 
 <?php

@@ -16,9 +16,14 @@
 
   function isValidUser($con, $username, $email) {
     $users = array();
-    get_user_data($con, $username, $email);
-    return true;
-
+    $res = get_user_data($con, $username, $email);
+    foreach ($res as $row) {
+      array_push($users, $row);
+    }
+    if (count($users) == 0) {
+      return true;
+    }
+    return false;
   }
 
   
