@@ -28,9 +28,9 @@
       array_push($users, $row);
     }
     if (count($users) == 0) {
-      return true;
+      return false;
     }
-    return false;
+    return true;
   }
 
   function isEmailTaken($con, $email) {

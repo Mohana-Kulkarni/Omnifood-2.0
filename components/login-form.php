@@ -10,7 +10,7 @@
     $username = $_POST['user-name'];
     $password = $_POST['pass-word'];
 
-    if(!(!isEmptyLogin($username, $password) && isValidUser($con, $username))) {
+    if(!isEmptyLogin($username, $password) && isValidUser($con, $username)) {
       if (isAccountValid($con, $username, $password)) {
         //Create session
         // echo "Create Session";
