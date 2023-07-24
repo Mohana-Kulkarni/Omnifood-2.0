@@ -9,17 +9,21 @@
   if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $_POST['user-name'];
     $password = $_POST['pass-word'];
-
+     
     if(!isEmptyLogin($username, $password) && isValidUser($con, $username)) {
       if (isAccountValid($con, $username, $password)) {
         //Create session
+        include "config/session.php";
+
+        $_SESSION['username'] = $username; 
+        
         // echo "Create Session";
         header("Location: ./index.html"); 
       } else {
-        $flag = true;
+          $flag = true;
       }
     } else {
-      $flag = true;
+        $flag = true;
     }
   }
 ?>
