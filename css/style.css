@@ -411,8 +411,8 @@ Greys: #555
 .pricing-plan--complete::after {
   content: "Best Value";
   position: absolute;
-  top: 6%;
-  right: -9%;
+  top: 7%;
+  right: -17%;
   text-transform: uppercase;
   font-size: 1.4rem;
   font-weight: 700;
@@ -903,6 +903,7 @@ Greys: #555
   justify-content: space-between;
   margin-top: 1.6rem;
 }
+
 
 .cart-btn-div {
   display: flex;

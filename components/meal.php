@@ -51,7 +51,13 @@
             <strong>
               <span class="card-price" >&#8377;<?php echo $price ?></span>
             </strong>
-            <button id = "<?php echo $id;?>" class="btn-round" onclick= "add_to_cart(<?php echo $id; ?>)"><img class="add-icon" src="img/icons/add.svg" alt="add-icon" /></button>
+            <button id = "<?php echo $id;?>" class="btn-round" onclick="add_to_cart(<?php echo $id; ?>)"><img class="add-icon" src="img/icons/<?php 
+              if(in_array($id, $_SESSION['cart'])) { 
+                echo "subtract.svg";  
+              } else {
+                echo "add.svg";
+              }
+            ?>" alt="add-icon" /></button>
           </div>
         </div>
       </div>

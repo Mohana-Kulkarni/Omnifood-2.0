@@ -1,6 +1,15 @@
 <?php 
   include "../config/session.php";
 
-  array_push($_SESSION['cart'], $_GET['id']);
-  echo "SUCCESS";  
+  $id = $_GET['id'];
+  if(!in_array($id, $_SESSION['cart'])) {
+    $_SESSION['cart'][$id] =  $id;
+    echo "SUCCESS";  
+  } else {
+
+    unset($_SESSION['cart'][$id]);
+
+    //array_pop($_SESSION['cart'], $id);
+  }
+  
 ?> 
