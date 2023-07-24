@@ -2,10 +2,12 @@
   include "db.php";
   include "models/meal_model.php";
   include "controllers/meal_cntr.php";
+
   
   $all_cards = meal_data($con);
 
   foreach ($all_cards as $row) {
+    $id = $row['id'];
     $title = $row['title'];
     $calories = $row['calories'];
     $nutriscore = $row['nutriscore'];
@@ -49,7 +51,7 @@
             <strong>
               <span class="card-price" >&#8377;<?php echo $price ?></span>
             </strong>
-            <button class="btn-round"><img class="add-icon" src="img/icons/add.svg" alt="add-icon" /></button>
+            <button id = "<?php echo $id;?>" class="btn-round" onclick= "add_to_cart(<?php echo $id; ?>)"><img class="add-icon" src="img/icons/add.svg" alt="add-icon" /></button>
           </div>
         </div>
       </div>

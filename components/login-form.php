@@ -16,7 +16,8 @@
         include "config/session.php";
         
 
-        $_SESSION['username'] = $username; 
+        $_SESSION['username'] = $username;
+        $_SESSION['cart'] = array();
         
         // echo "Create Session";
         header("Location: ./index.php"); 

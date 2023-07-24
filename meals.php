@@ -1,3 +1,9 @@
+<?php 
+  include "config/session.php";
+  
+  print_r($_SESSION['cart']);
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +35,7 @@
     <nav class="main-nav">
       <ul class="main-nav-list">
         <li>
-          <a class="main-nav-link" href="index.html"> How it works</a>
+          <a class="main-nav-link" href="index.php"> How it works</a>
         </li>
         <li>
           <a class="main-nav-link" href="#"> Meals</a>
@@ -138,6 +144,7 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script defer src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
     "></script>
+    <script defer src="js/cart_script.js"></script>
 
 </body>
 
