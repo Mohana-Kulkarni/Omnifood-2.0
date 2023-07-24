@@ -14,11 +14,12 @@
       if (isAccountValid($con, $username, $password)) {
         //Create session
         include "config/session.php";
+        
 
         $_SESSION['username'] = $username; 
         
         // echo "Create Session";
-        header("Location: ./index.html"); 
+        header("Location: ./index.php"); 
       } else {
           $flag = true;
       }
