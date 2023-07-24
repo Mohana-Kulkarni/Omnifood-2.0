@@ -12,7 +12,7 @@ function add_to_cart(id) {
       res = JSON.parse(res);  
       console.log(res.result);  
       if(res.result === "SUCCESS") {
-        btn_cart.innerHTML = "<img class='add-icon' src='img/icons/subtract.svg' alt='add-icon' />";
+        btn_cart.innerHTML = "<img class='add-icon' src='img/icons/subtract.svg' alt='subtract-icon' />";
       } else {
         btn_cart.innerHTML = "<img class='add-icon' src='img/icons/add.svg' alt='add-icon' />";
       }

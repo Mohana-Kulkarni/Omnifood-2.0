@@ -6,18 +6,34 @@
 
 <?php
   $flag = false;
+  $errors = array();
 
   if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $_POST['user-name'];
     $email = $_POST['email-id'];
     $password = $_POST['pass-word'];
 
-    if(!isEmptySignup($username, $email, $password) && isValidEmail($email) && isEmailTaken($con, $email)) {
+    if (isEmptySignup($username, $email, $password)) {
+      $flag = true;
+      array_push($errors, "Fill the empty fields");
+    } else {
+      if (!isValidEmail($email)) {
+        $flag = true;
+        array_push($errors, "Enter valid email");
+      }
+  
+      if (!isEmailTaken($con, $email)) {
+        $flag = true;
+        array_push($errors, "Email already exists");
+      }
+    }
+
+    if(!$flag) {
       insertUserData($con, $username, $email, $password);
       header("Location: ./login.php");
-    } else {
-      $flag = true;
     }
+
+    // print_r($errors);
   }
 ?>
 
@@ -30,9 +46,11 @@
     <div class="error-msg">
       <?php 
         if ($flag) {
-          ?>
-          <p>Enter valid data</p>
-          <?php
+          foreach ($errors as $error) {
+            ?>
+            <p><?php echo $error?></p>
+            <?php
+          }
         }
       ?>
     </div>
