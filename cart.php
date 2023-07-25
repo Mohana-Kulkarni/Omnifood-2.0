@@ -32,7 +32,7 @@
     <nav class="main-nav">
       <ul class="main-nav-list">
         <li>
-          <a class="main-nav-link" href="index.html"> How it works</a>
+          <a class="main-nav-link" href="index.php"> How it works</a>
         </li>
         <li>
           <a class="main-nav-link" href="meals.php"> Meals</a>
@@ -71,18 +71,23 @@
     </div>
       <div id="empty-cart-img" class="empty-cart">
       <?php 
-    
-      if(count($_SESSION['cart']) == 0) {
-        ?>
-          <img src="img/icons/empty_cart.png" alt="empty-cart">
+      if (isset($_SESSION['cart'])) {
+        if(count($_SESSION['cart']) == 0) {
+          ?>
+            <img src="img/icons/empty_cart.png" alt="empty-cart">
+          <?php
+        } else {
+          ?>
+          <div class="container cart-grid margin-bottom-md">
+            <?php include "components/cart.php"; ?>
+            <?php include "components/checkout.php"; ?>
+          </div>
         <?php
+        }
       } else {
         ?>
-        <div class="container cart-grid margin-bottom-md">
-          <?php include "components/cart.php"; ?>
-          <?php include "components/checkout.php"; ?>
-        </div>
-      <?php
+        <img src="img/icons/empty_cart.png" alt="empty-cart">
+        <?php
       }
       ?>
       </div>

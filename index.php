@@ -69,7 +69,7 @@
             eat healthy again. Tailored to your personal tastes and
             nutritional needs.
           </p>
-          <a href="#cta" class="btn btn--full margin-right-sm">Start eating well</a>
+          <a href="meals.php" class="btn btn--full margin-right-sm">Start eating well</a>
           <a href="#how" class="btn btn--outline">Learn more &dArr;</a>
           <div class="delivered-meals">
             <div class="delivered-imgs">
@@ -271,7 +271,7 @@
         </div>
 
         <div class="container all-receipes">
-          <a href="meals.html" class="link">See all receipes &rarr;</a>
+          <a href="meals.php" class="link">See all receipes &rarr;</a>
         </div>
       </div>
     </section>
@@ -393,7 +393,7 @@
             </li>
           </ul>
           <div class="plan-sign-up">
-            <a href="#" class="btn btn--full margin-right-sm">Start eating well</a>
+            <a href="meals.php" class="btn btn--full margin-right-sm">Start eating well</a>
           </div>
         </div>
         <div class="pricing-plans pricing-plan--complete">
@@ -421,7 +421,7 @@
             </li>
           </ul>
           <div class="plan-sign-up">
-            <a href="#" class="btn btn--full margin-right-sm">Start eating well</a>
+            <a href="meals.php" class="btn btn--full margin-right-sm">Start eating well</a>
           </div>
         </div>
       </div>
@@ -500,7 +500,7 @@
                 </select>
               </div>
 
-              <button class="btn btn--form">Sign up now</button>
+              <a href="login.php" class="btn btn--form">Sign up now</a>
             </form>
           </div>
 

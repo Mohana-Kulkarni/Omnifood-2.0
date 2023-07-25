@@ -13,10 +13,11 @@ function add_to_cart(id) {
       console.log(res.result);  
       if(res.result === "SUCCESS") {
         add_cart.innerHTML = "<img class='add-icon' src='img/icons/subtract.svg' alt='subtract-icon' />";
-      } else {
+      } else if (res.result === "FAILURE") {
         add_cart.innerHTML = "<img class='add-icon' src='img/icons/add.svg' alt='add-icon' />";
+      } else {
+        window.location.href = "login.php";
       }
-      
     }
   }
   xhr.send();
@@ -112,10 +113,25 @@ function add_qty(id) {
 }
 
 function on() {
-  console.log("Clicked");
   document.getElementById("overlay").style.display = "block";
+
+  const img = document.getElementById('empty-cart-img');
+
+  var xhr = new XMLHttpRequest();
+  var res = "";
+  xhr.open("GET", "./controllers/clear_session.php", true); 
+  xhr.onreadystatechange = function() {
+    if(xhr.readyState == 4 && xhr.status == 200) {
+      res = this.responseText;
+      res = JSON.parse(res);  
+      console.log(res.result);
+      img.innerHTML = "<img src='img/icons/empty_cart.png' alt='empty-cart'></img>";
+    }
+  }
+  xhr.send();
 }
 
 function off() {
   document.getElementById("overlay").style.display = "none";
+  window.location.href = "index.php";
 }
