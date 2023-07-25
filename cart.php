@@ -61,12 +61,14 @@
         Your Shopping List
       </h2>
     </div>
-    <?php 
+      <div id="empty-cart-img" class="empty-cart">
+      <?php 
+    
       if(count($_SESSION['cart']) == 0) {
         ?>
-        <div class="empty-cart">
+
           <img src="img/icons/empty_cart.png" alt="empty-cart">
-        </div>
+        
         <?php
       } else {
         ?>
@@ -75,16 +77,16 @@
         </div>
       <?php
       }
-    
-    
-    ?>
+      ?>
+      </div>
+      
   </section>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script defer src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
     "></script>
-
+    <script defer src="js/cart_script.js"></script>
 </body>
 
 </html>

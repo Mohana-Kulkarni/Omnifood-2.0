@@ -29,6 +29,7 @@
           
           $_SESSION['username'] = $username;
           $_SESSION['cart'] = array();
+          $_SESSION['qty'] = array();
           
           header("Location: ./index.php"); 
         }

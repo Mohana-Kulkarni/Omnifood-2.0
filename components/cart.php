@@ -16,6 +16,7 @@
   <div class="card-container">
     <?php
   foreach ($all_cards as $row) {
+    $id = $row['id'];
     $title = $row['title'];
     $calories = $row['calories'];
     $nutriscore = $row['nutriscore'];
@@ -26,7 +27,7 @@
     $tags = $row['tags'];
     ?>
 
-    <div class="cart-meal">
+    <div id="card-<?php echo $id; ?>" class="cart-meal">
       <div class="cart-img-div">
         <img src="img/meals/<?php echo $img_name; ?>.jpg" class="cart-meal-img" alt="<?php echo $title; ?>" />
       </div>
@@ -62,9 +63,9 @@
               <span class="card-price" >&#8377;<?php echo $price ?></span>
             </strong>
             <div class="cart-btn-div">
-                <button class="cart-btn-round-left"><img class="subtract-icon" src="img/icons/subtract.svg" alt="subtract-icon" /></button>
-                <li class="cart-btn-value">2</li>
-                <button class="cart-btn-round-right"><img class="add-icon" src="img/icons/add.svg" alt="add-icon" /></button>
+                <button class="cart-btn-round-left" onclick="sub_qty(<?php echo $id; ?>)"><img class="subtract-icon" src="img/icons/subtract.svg" alt="subtract-icon" /></button>
+                <li class="cart-btn-value"><p id="qty-<?php echo $id; ?>"><?php echo $_SESSION['qty'][$id]; ?></p></li>
+                <button class="cart-btn-round-right" onclick="add_qty(<?php echo $id; ?>)"><img class="add-icon" src="img/icons/add.svg" alt="add-icon" /></button>
             </div>
           </div>
         </div>

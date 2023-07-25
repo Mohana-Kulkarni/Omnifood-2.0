@@ -53,3 +53,46 @@ function redirect_to_cart_page() {
     window.location.href = "cart.php";
   });
 }
+
+function sub_qty(id) {
+  const qty = document.getElementById('qty-'+id); 
+  const card = document.getElementById('card-'+id);
+  const img = document.getElementById('empty-cart-img');
+  var xhr = new XMLHttpRequest();
+  var res = "";
+  xhr.open("GET", "./controllers/sub_meal_qty.php?id="+id, true); 
+  xhr.onreadystatechange = function() {
+    if(xhr.readyState == 4 && xhr.status == 200) {
+      res = this.responseText;
+      res = JSON.parse(res);  
+      console.log(res.qty); 
+      if(res.qty <= 0) {
+        card.remove();
+        if(res.isEmpty) {
+          img.innerHTML = "<img src='img/icons/empty_cart.png' alt='empty-cart'></img>";
+        }
+      } else {
+        qty.innerHTML = res.qty;
+      } 
+    }
+  }
+  xhr.send();
+}
+
+function add_qty(id) {
+
+  const qty = document.getElementById('qty-'+id); 
+  var xhr = new XMLHttpRequest();
+  var res = "";
+  xhr.open("GET", "./controllers/add_meal_qty.php?id="+id, true); 
+  xhr.onreadystatechange = function() {
+    if(xhr.readyState == 4 && xhr.status == 200) {
+      res = this.responseText;
+      res = JSON.parse(res);  
+      console.log(res.qty);  
+      qty.innerHTML = res.qty;
+      
+    }
+  }
+  xhr.send();
+}

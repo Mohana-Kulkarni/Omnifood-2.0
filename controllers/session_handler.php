@@ -4,6 +4,7 @@
   $id = $_GET['id'];
   if(!in_array($id, $_SESSION['cart'])) {
     $_SESSION['cart'][$id] =  $id;
+    $_SESSION['qty'][$id] = 1; 
     $my_obj = new stdClass();
     $my_obj->result = "SUCCESS"; 
     echo json_encode($my_obj);
@@ -13,6 +14,7 @@
     echo json_encode($my_obj);
 
     unset($_SESSION['cart'][$id]);
+    unset($_SESSION['qty'][$id]);
     
     //array_pop($_SESSION['cart'], $id);
   }
