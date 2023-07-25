@@ -3,7 +3,6 @@
   include "models/meal_model.php";
   include "controllers/meal_cntr.php";
 
-  
   $all_cards = meal_data($con);
 
   foreach ($all_cards as $row) {

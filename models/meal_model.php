@@ -9,4 +9,13 @@
         }
         return ($res);
     }
+
+    function get_meal_price($con, $id) {
+      $query = "SELECT id, price FROM meal WHERE id='$id'";
+      $res = mysqli_query($con, $query);
+        if(!$res) {
+          die('Query Failed'.mysqli_error());
+        }
+        return ($res);
+    }
 ?>

@@ -57,22 +57,31 @@ function redirect_to_cart_page() {
 function sub_qty(id) {
   const qty = document.getElementById('qty-'+id); 
   const card = document.getElementById('card-'+id);
+  const checkout_item = document.getElementById('checkout-item-'+id);
+  const checkout_qty = document.getElementById('checkout-'+id);
   const img = document.getElementById('empty-cart-img');
+  const total = document.getElementById('total');
+
   var xhr = new XMLHttpRequest();
   var res = "";
   xhr.open("GET", "./controllers/sub_meal_qty.php?id="+id, true); 
   xhr.onreadystatechange = function() {
     if(xhr.readyState == 4 && xhr.status == 200) {
       res = this.responseText;
+      // console.log(res);
       res = JSON.parse(res);  
-      console.log(res.qty); 
+      // console.log(res); 
       if(res.qty <= 0) {
         card.remove();
+        checkout_item.remove();
+        total.innerHTML = '&#8377;' + res.price;
         if(res.isEmpty) {
           img.innerHTML = "<img src='img/icons/empty_cart.png' alt='empty-cart'></img>";
         }
       } else {
         qty.innerHTML = res.qty;
+        checkout_qty.innerHTML = res.qty;
+        total.innerHTML = '&#8377;' + res.price;
       } 
     }
   }
@@ -82,16 +91,21 @@ function sub_qty(id) {
 function add_qty(id) {
 
   const qty = document.getElementById('qty-'+id); 
+  const checkout_qty = document.getElementById('checkout-'+id);
+  const total = document.getElementById('total');
+
   var xhr = new XMLHttpRequest();
   var res = "";
   xhr.open("GET", "./controllers/add_meal_qty.php?id="+id, true); 
   xhr.onreadystatechange = function() {
     if(xhr.readyState == 4 && xhr.status == 200) {
       res = this.responseText;
+      // console.log(res);
       res = JSON.parse(res);  
       console.log(res.qty);  
       qty.innerHTML = res.qty;
-      
+      checkout_qty.innerHTML = res.qty;
+      total.innerHTML = '&#8377;' + res.price;
     }
   }
   xhr.send();

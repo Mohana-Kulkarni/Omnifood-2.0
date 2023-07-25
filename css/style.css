@@ -844,6 +844,7 @@ Greys: #555
   display: grid;
   row-gap: 4.6rem;
   column-gap: 4.4rem;
+  width: 100%;
 }
 
 .cart-meal-attributes {
@@ -992,4 +993,55 @@ Greys: #555
 }
 
 
+/*************************/
+/* CHECKOUT */
+/*************************/
 
+.checkout {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+  border-radius: 11px;
+  overflow: hidden;
+  /* transition: all 0.4s; */
+  height: fit-content;
+}
+
+.checkout-title {
+  display: flex;
+  justify-content: center;
+  font-size: 2.4rem;
+  color: #555;
+  font-weight: 600;
+  margin-bottom: 3.2rem;
+}
+
+.checkout-item-title {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.checkout-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout-price-title {
+  font-size: 2.4rem;
+  color: #555;
+  font-weight: 600;
+  margin-top: 3.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.checkout-qty {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.checkout-price {
+  font-size: 4.8rem;
+  line-height: 1.05;
+  font-weight: 500;
+}

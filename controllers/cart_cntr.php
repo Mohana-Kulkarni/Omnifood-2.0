@@ -1,4 +1,4 @@
-<?php 
+<?php
 
   function get_added_meals($con, $addedMeals) {
     $res = array();
@@ -44,7 +44,27 @@
     
     // print_r($all_cards);
     return ($all_cards);
-
   }
-  
+
+  function calculate_total_price($con, $cart_arr, $qty_arr) {
+    $sql_res = array();
+    foreach ($cart_arr as $meal_id) {
+      $res = get_meal_price($con, $meal_id);
+      // print_r($res);
+      array_push($sql_res, $res);
+    }
+
+    foreach ($sql_res as $obj) {
+      while ($row = mysqli_fetch_assoc($obj)) {
+        $total[$row['id']] = $row['price'] * $qty_arr[$row['id']];
+      }
+    }
+
+    $total_price = 0;
+    foreach ($total as $id => $price) {
+      $total_price += $price;
+    }
+
+    return $total_price;
+    }
 ?>

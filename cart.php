@@ -66,14 +66,13 @@
     
       if(count($_SESSION['cart']) == 0) {
         ?>
-
           <img src="img/icons/empty_cart.png" alt="empty-cart">
-        
         <?php
       } else {
         ?>
         <div class="container cart-grid grid--2-cols margin-bottom-md">
           <?php include "components/cart.php"; ?>
+          <?php include "components/checkout.php"; ?>
         </div>
       <?php
       }
