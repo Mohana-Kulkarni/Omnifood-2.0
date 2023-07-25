@@ -18,9 +18,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/general.css" />
-
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/queries.css" />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <title>Omnifood &mdash; Cart</title>
 </head>
 
@@ -56,6 +56,14 @@
 
   <section class="section-meals" id="meals">
     <div class="container center-text">
+      <div  id="overlay" class="overlay" onclick="off()">
+      <div class="overlay-card-container">
+        <div class="cart-meal checkout-overlay">
+          <a href="index.php" class="close-container"><img src="img/icons/close.png" alt="close-icon" class="close-btn"></a>
+          <img src="img/icons/delivery_img.svg" alt="delivery-img" class="delivery-img">
+          </div>
+        </div>
+      </div>
       <span class="subheading"> Cart</span>
       <h2 class="heading-secondary">
         Your Shopping List
@@ -70,7 +78,7 @@
         <?php
       } else {
         ?>
-        <div class="container cart-grid grid--2-cols margin-bottom-md">
+        <div class="container cart-grid margin-bottom-md">
           <?php include "components/cart.php"; ?>
           <?php include "components/checkout.php"; ?>
         </div>

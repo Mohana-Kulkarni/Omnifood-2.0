@@ -20,10 +20,13 @@
         <?php
         }
       ?>
+      <hr class="line">
       <div class="checkout-price">
         <p class="checkout-price-title">Total:</p>
         <p id="total" class="checkout-price">&#8377;<?php echo $total_price; ?></p>
       </div>
+
+      <button class="checkout-btn" onclick="on()"> Checkout </button>
       </div>
     </div>
   </div>
