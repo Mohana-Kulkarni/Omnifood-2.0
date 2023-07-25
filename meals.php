@@ -58,11 +58,16 @@
   </header>
 
   <section class="section-meals" id="meals">
-    <div class="container center-text">
-      <span class="subheading"> Meals</span>
-      <h2 class="heading-secondary">
-        Omnifood AI chooses from 5,000+ recipes
-      </h2>
+    <div class="container">
+      <span class="subheading center-text"> Meals</span>
+      <div class="cart-card-price-div">
+        <h2 class="heading-secondary">
+          Omnifood AI chooses from 5,000+ recipes
+        </h2>
+        <a href="cart.php" class= "cart-btn">
+          <img class="cart-icon" src="img/icons/cart.png" alt="cart-icon">
+        </a> 
+      </div>
     </div>
 
     <div class="container grid grid--3-cols margin-bottom-md">

@@ -1,3 +1,7 @@
+<?php 
+  include "config/session.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,11 +61,23 @@
         Your Shopping List
       </h2>
     </div>
-
-    <div class="container cart-grid grid--2-cols margin-bottom-md">
-      <?php include "components/cart.php"; ?>
-
-    </div>
+    <?php 
+      if(count($_SESSION['cart']) == 0) {
+        ?>
+        <div class="empty-cart">
+          <img src="img/icons/empty_cart.png" alt="empty-cart">
+        </div>
+        <?php
+      } else {
+        ?>
+        <div class="container cart-grid grid--2-cols margin-bottom-md">
+          <?php include "components/cart.php"; ?>
+        </div>
+      <?php
+      }
+    
+    
+    ?>
   </section>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

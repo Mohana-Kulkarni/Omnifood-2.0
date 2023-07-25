@@ -519,13 +519,13 @@
 
         <ul class="social-links">
           <li>
-            <a class="footer-link" hred="#"><ion-icon class="social-icon" name="logo-instagram"></ion-icon></a>
+            <a class="footer-link" href="#"><ion-icon class="social-icon" name="logo-instagram"></ion-icon></a>
           </li>
           <li>
-            <a class="footer-link" hred="#"><ion-icon class="social-icon" name="logo-facebook"></ion-icon></a>
+            <a class="footer-link" href="#"><ion-icon class="social-icon" name="logo-facebook"></ion-icon></a>
           </li>
           <li>
-            <a class="footer-link" hred="#"><ion-icon class="social-icon" name="logo-twitter"></ion-icon></a>
+            <a class="footer-link" href="#"><ion-icon class="social-icon" name="logo-twitter"></ion-icon></a>
           </li>
         </ul>
 

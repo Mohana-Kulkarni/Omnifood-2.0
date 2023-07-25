@@ -1,32 +1,7 @@
 <?php 
-  include "db.php";  
-  include "models/cart_model.php";
-  include "controllers/cart_cntr.php";
   
-  
-  $addedMeals = $_SESSION['cart'];
-  $all_cards = get_added_meals($con, $addedMeals);
-
-  $flag = true;
-  if(count($all_cards) == 0) {
-    $flag = false;
-  } 
-
   ?>
-  <div class="card-container">
-    <?php
-  foreach ($all_cards as $row) {
-    $title = $row['title'];
-    $calories = $row['calories'];
-    $nutriscore = $row['nutriscore'];
-    $ratings = $row['ratings'];
-    $votes = $row['votes'];
-    $img_name = $row['image_name'];
-    $price = $row['price'];
-    $tags = $row['tags'];
-    ?>
-
-    <div class="cart-meal">
+  <div class="cart-meal">
       <div class="cart-img-div">
         <img src="img/meals/<?php echo $img_name; ?>.jpg" class="cart-meal-img" alt="<?php echo $title; ?>" />
       </div>
@@ -70,11 +45,4 @@
         </div>
       </div>
     </div>
-    <?php
-  }
-  ?>
-  </div>
-  <?php
 ?>
-
-  
