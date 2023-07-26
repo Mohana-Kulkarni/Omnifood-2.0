@@ -1,6 +1,6 @@
 
 <div class="overlay" id="overlay" onclick="closeOverlay()">
-<div class="overlay-container">
+<div id="overlay-container" class="overlay-container">
     <div class="overlay-content">
     <a href="index.php" class="close-container"><img src="img/icons/close.png" alt="close-icon" class="close-btn"></a>
       <h2 class="message">Confirm Subscription Purchase</h2>

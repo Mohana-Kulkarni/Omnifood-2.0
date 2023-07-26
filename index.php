@@ -5,7 +5,19 @@
   // print_r($_SESSION['cart']);
 
   // display_subcription_data($con);
+  // $current_date = date("Y-m-d");
+  // $end_date = date('Y-m-d', strtotime($current_date. ' + 1 months'));
 
+  // // echo $current_date." ".$end_date;
+  // include "db.php";
+  // include "models/subscription_model.php";
+  // include "controllers/subscription_cntr.php";
+
+  // $res = get_user_id($con, $_SESSION['username']);
+  // while($row = mysqli_fetch_assoc($res)) {
+  //   print_r($row);  
+  // }
+  
 ?>
 
 <!DOCTYPE html>

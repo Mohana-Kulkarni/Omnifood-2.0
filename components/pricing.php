@@ -43,7 +43,7 @@
     </li>
   </ul>
   <div class="plan-sign-up">
-    <button id="starter" class="margin-right-sm subscription-btn" onclick="openOverlay()">Get Subscription</button>
+    <button id="starter" class="margin-right-sm subscription-btn" onclick="openOverlay('starter')">Get Subscription</button>
   </div>
 </div>  
 
@@ -72,7 +72,7 @@
     </li>
   </ul>
   <div class="plan-sign-up">
-    <button id="complete" class="margin-right-sm subscription-btn" onclick="openOverlay()">Get Subscription</button>
+    <button id="complete" class="margin-right-sm subscription-btn" onclick="openOverlay('complete')">Get Subscription</button>
   </div>
 </div>
 </div>
