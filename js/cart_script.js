@@ -114,6 +114,10 @@ function add_qty(id) {
 
 function on() {
   document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
 
   const img = document.getElementById('empty-cart-img');
 
@@ -129,9 +133,6 @@ function on() {
     }
   }
   xhr.send();
-}
 
-function off() {
-  document.getElementById("overlay").style.display = "none";
-  window.location.href = "index.php";
+  // window.location.href = "index.php";
 }

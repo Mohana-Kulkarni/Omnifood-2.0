@@ -41,7 +41,7 @@
           <a class="main-nav-link" href="#"> Meals</a>
         </li>
         <li>
-          <a class="main-nav-link" href="#testimonials"> Testimonials </a>
+          <a class="main-nav-link" href="cart.php"> Cart </a>
         </li>
         <li>
           <a class="main-nav-link" href="#pricing"> Pricing</a>
