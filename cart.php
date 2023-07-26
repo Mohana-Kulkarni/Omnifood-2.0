@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/general.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/queries.css" />
+  <link rel="stylesheet" href="css/checkout.css" />
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <title>Omnifood &mdash; Cart</title>
 </head>
@@ -99,6 +100,7 @@
   <script defer src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
     "></script>
     <script defer src="js/cart_script.js"></script>
+    <script defer src="js/coupons_script.js"></script>
 </body>
 
 </html>

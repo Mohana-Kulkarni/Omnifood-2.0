@@ -1,6 +1,9 @@
+<?php include "components/coupons_overlay.php"; ?>
+  
   <div class="checkout">
     <div class="meal-content">
       <div>
+      
       <p class="checkout-title">Item(s) Added</p>
       <?php 
 
@@ -20,7 +23,12 @@
         <?php
         }
       ?>
+      <div class="checkout-coupons">
+        <a onclick="on_coupons_overlay()" href="#" class="link">View all coupons &rarr;</a>
+      </div>
+
       <hr class="line">
+
       <div class="checkout-price">
         <p class="checkout-price-title">Total:</p>
         <p id="total" class="checkout-price">&#8377;<?php echo $total_price; ?></p>
