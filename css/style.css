@@ -455,6 +455,22 @@ Greys: #555
   margin-top: 4.8rem;
 }
 
+.subscription-btn {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+  border: none;
+  cursor: pointer;
+
+  transition: all 0.3s;
+  font-family: inherit;
+  background-color: #e67e22;
+  color: #fff;
+}
+
 .plan-details {
   font-size: 1.6rem;
   line-height: 1.6;
@@ -1113,4 +1129,73 @@ Greys: #555
   justify-content: center;
   height: fit-content;
   width: fit-content;
+}
+
+
+/*************************/
+/* Overlay */
+/*************************/
+
+.overlay-container {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  font-size: 2.4rem;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+
+.overlay-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.message {
+  margin-top: 4.8rem;
+  margin-left: 2.4rem;
+  color: #333;
+  font-size: 2rem;
+}
+.message-small {
+  margin-top: 1.2rem;
+  margin-left: 2.4rem;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 4.8rem;
+}
+
+button {
+  cursor: pointer;
+  padding: 1rem 2rem;
+  margin: 0 1rem;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
+.confirm-btn {
+  border: none;
+  background-color: #e67e22;
+  color: #fff;
+}
+
+.cancel-btn {
+  border-color: #eb984e;
+  color: #cf711f;
+}
+
+.purchase-btn {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2196F3;
+  color: #fff;
 }
