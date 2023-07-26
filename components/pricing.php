@@ -3,6 +3,7 @@
   include "db.php";
   include "controllers/subscription_cntr.php";
   include "models/subscription_model.php";
+  include "subscription_overlay.php"; 
 
   $data = display_subcription_data($con);
 
@@ -46,7 +47,6 @@
   </div>
 </div>  
 
-<?php include "overlay.php"; ?>
 <div class="pricing-plans pricing-plan--complete">
   <header class="plan-header">
     <p class="plan-name"><?php echo ucfirst($data[1]['type']) ?></p>
