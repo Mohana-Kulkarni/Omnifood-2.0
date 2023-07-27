@@ -21,7 +21,7 @@ function on_coupons_overlay() {
         // console.log(res);
         res = JSON.parse(res);  
         // console.log(res.qty);  
-        total.innerHTML = '&#8377;' + res.discounted_price;
+        total.innerHTML = '&#8377;' + " " + res.discounted_price;
       }
     }
     xhr.send();

@@ -8,6 +8,8 @@
   
     $id = $_GET['id'];
     // echo in_array($id, $_SESSION['qty']);
+
+    $_SESSION['coupon-id'] = $id;
   
     $total_price = calculate_total_price($con, $_SESSION['cart'], $_SESSION['qty']);
     $discount = get_discounts($con, $id);

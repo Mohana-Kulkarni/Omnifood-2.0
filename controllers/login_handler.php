@@ -7,6 +7,7 @@
     unset($_SESSION['cart']);
     unset($_SESSION['qty']);
     unset($_SESSION['subscription_id']);
+    unset($_SESSION['coupon-id']);
     
     $my_obj = new stdClass();
     $my_obj->result = "Logout";

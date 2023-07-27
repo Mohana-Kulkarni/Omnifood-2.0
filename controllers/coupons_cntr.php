@@ -25,4 +25,10 @@
         }
         return $discount;
     }
+
+    function subscription_data_by_id($con, $subscription_id) {
+        $res = get_subscription_data_by_id($con, $subscription_id);
+        $subscription_details = mysqli_fetch_assoc($res);
+        return $subscription_details;
+    }
 ?>

@@ -71,18 +71,17 @@ function sub_qty(id) {
       res = this.responseText;
       // console.log(res);
       res = JSON.parse(res);  
-      // console.log(res); 
       if(res.qty <= 0) {
         card.remove();
         checkout_item.remove();
-        total.innerHTML = '&#8377;' + res.price;
+        total.innerHTML = '&#8377;' + " " + res.total_price;
         if(res.isEmpty) {
           img.innerHTML = "<img src='img/icons/empty_cart.png' alt='empty-cart'></img>";
         }
       } else {
         qty.innerHTML = res.qty;
         checkout_qty.innerHTML = res.qty;
-        total.innerHTML = '&#8377;' + res.price;
+        total.innerHTML = '&#8377;' + " " + res.total_price;
       } 
     }
   }
@@ -106,7 +105,7 @@ function add_qty(id) {
       console.log(res.qty);  
       qty.innerHTML = res.qty;
       checkout_qty.innerHTML = res.qty;
-      total.innerHTML = '&#8377;' + res.price;
+      total.innerHTML = '&#8377;' + " " + res.total_price;
     }
   }
   xhr.send();

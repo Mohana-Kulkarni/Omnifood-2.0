@@ -1,4 +1,6 @@
-<?php include "components/coupons_overlay.php"; ?>
+<?php 
+  include "components/coupons_overlay.php"; 
+?>
   
   <div class="checkout">
     <div class="meal-content">
@@ -31,7 +33,17 @@
 
       <div class="checkout-price">
         <p class="checkout-price-title">Total:</p>
-        <p id="total" class="checkout-price">&#8377;<?php echo $total_price; ?></p>
+        <p id="total" class="checkout-price">&#8377;
+          <?php
+            if (isset($_SESSION['coupon-id'])) {
+              $discount = get_discounts($con, $_SESSION['coupon-id']);
+              $discounted_price = $total_price - ($total_price * $discount)/100;
+              echo $discounted_price;
+            } else {
+              echo $total_price;
+            } 
+          ?>
+        </p>
       </div>
 
       <button class="checkout-btn" onclick="on()"> Checkout </button>
