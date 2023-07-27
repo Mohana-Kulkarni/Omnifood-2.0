@@ -1,5 +1,5 @@
 <?php 
-    function get_subscribed_user($con, $user_id) {
+    function get_user_coupons($con, $user_id) {
         $query = "SELECT subscription_id FROM subscribed_users WHERE user_id = $user_id";
         $res = mysqli_query($con, $query);
         if(!$res) {

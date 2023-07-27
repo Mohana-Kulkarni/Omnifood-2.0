@@ -42,10 +42,14 @@
           <a class="main-nav-link" href="#"> Cart </a>
         </li>
         <li>
-          <a class="main-nav-link" href="#pricing"> Pricing</a>
-        </li>
-        <li>
-          <a class="main-nav-link nav-cta" href="#cta"> Try for free</a>
+        <a id="signup-btn" class="logout-btn" onclick="handle_login_cart()">
+          <?php 
+            if(isset($_SESSION['username'])) {
+              echo "Logout";
+            } else {
+              echo "Try for free";
+            }
+          ?> </a>
         </li>
       </ul>
     </nav>
@@ -101,6 +105,7 @@
     "></script>
     <script defer src="js/cart_script.js"></script>
     <script defer src="js/coupons_script.js"></script>
+  <script defer src="js/login_script.js"></script>
 </body>
 
 </html>

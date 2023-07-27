@@ -62,7 +62,7 @@
           <a class="main-nav-link" href="#pricing"> Pricing</a>
         </li>
         <li>
-          <a class="main-nav-link nav-cta" href="">
+          <a id="signup-btn" class="logout-btn" onclick="handle_login()">
           <?php 
             if(isset($_SESSION['username'])) {
               echo "Logout";
@@ -500,6 +500,7 @@
   <script defer src="js/script.js"></script>
   <script defer src="js/cart_script.js"></script>
   <script defer src="js/overlay_script.js"></script>
+  <script defer src="js/login_script.js"></script>
 </body>
 
 </html>

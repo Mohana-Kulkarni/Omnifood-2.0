@@ -1,11 +1,18 @@
 function openOverlay(subscription_id) {
+  console.log("OPen");
   const overlay = document.getElementById('overlay-container');
   overlay.setAttribute('id', subscription_id);
   document.getElementById("overlay").style.display = "block";
 }
 
 function closeOverlay() {
+  console.log("Close");
+  const overlay_id = document.getElementById('overlay');
+  const subscription_id = overlay_id.firstElementChild.id;
+
   document.getElementById("overlay").style.display = "none";
+  const overlay = document.getElementById(subscription_id);
+  overlay_id.firstElementChild.setAttribute('id', "overlay-container");
 }
 
 function confirmPurchase() {
@@ -19,6 +26,7 @@ function confirmPurchase() {
 
   const starter = document.getElementById('starter-btn');
   const complete = document.getElementById('complete-btn');
+  
   var xhr = new XMLHttpRequest();
   var res = "";
   var id;

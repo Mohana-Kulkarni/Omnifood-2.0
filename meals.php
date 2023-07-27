@@ -44,10 +44,14 @@
           <a class="main-nav-link" href="cart.php"> Cart </a>
         </li>
         <li>
-          <a class="main-nav-link" href="#pricing"> Pricing</a>
-        </li>
-        <li>
-          <a class="main-nav-link nav-cta" href="#cta"> Try for free</a>
+        <a id="signup-btn" class="logout-btn" onclick="handle_login_meal()">
+          <?php 
+            if(isset($_SESSION['username'])) {
+              echo "Logout";
+            } else {
+              echo "Try for free";
+            }
+          ?> </a>
         </li>
       </ul>
     </nav>
@@ -150,6 +154,7 @@
   <script defer src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
     "></script>
     <script defer src="js/cart_script.js"></script>
+  <script defer src="js/login_script.js"></script>
 
 </body>
 

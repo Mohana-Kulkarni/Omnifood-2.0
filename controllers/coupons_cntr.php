@@ -10,7 +10,7 @@
 
     function user_subscribed_type($con, $username) {
         $id = get_user_details($con, $username);
-        $res = get_subscribed_user($con, $id);
+        $res = get_user_coupons($con, $id);
         $subscription_id = 0;
         while ($row = mysqli_fetch_assoc($res)) {
             $subscription_id = $row['subscription_id'];
