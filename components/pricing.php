@@ -6,6 +6,17 @@
   include "subscription_overlay.php"; 
 
   $data = display_subcription_data($con);
+  
+  
+  if(!isset($_SESSION['username'])) {
+    $subscription_id = 0;
+  } else  {
+    $subscription_id = get_subscription_id($con, $_SESSION['username']);
+  
+  }
+  
+
+  // print_r($res);
 
 ?> 
 
@@ -43,7 +54,16 @@
     </li>
   </ul>
   <div class="plan-sign-up">
-    <button id="starter" class="margin-right-sm subscription-btn" onclick="openOverlay('starter')">Get Subscription</button>
+    <button id="starter-btn" class="margin-right-sm subscription-btn" onclick="openOverlay('starter')"><?php  
+      if($subscription_id == 0) {
+        echo "Get Subscription";
+      } else if($subscription_id == 1){
+        echo "Already Subscribed";
+      } else {
+        echo "Get Subscription";
+      }
+      ?>
+    </button>
   </div>
 </div>  
 
@@ -72,7 +92,17 @@
     </li>
   </ul>
   <div class="plan-sign-up">
-    <button id="complete" class="margin-right-sm subscription-btn" onclick="openOverlay('complete')">Get Subscription</button>
+    <button id="complete-btn" class="margin-right-sm subscription-btn" onclick="openOverlay('complete')">
+    <?php  
+      if($subscription_id == 0) {
+        echo "Get Subscription";
+      } else if($subscription_id == 2){
+        echo "Already Subscribed";
+      } else {
+        echo "Get Subscription";
+      }
+      ?>
+    </button>
   </div>
 </div>
 </div>

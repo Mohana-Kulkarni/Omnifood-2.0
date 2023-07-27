@@ -30,4 +30,30 @@
     return ($res);
   }
 
+  function get_subscription($con, $user_id) {
+    $query = "SELECT subscription_id FROM subscribed_users WHERE user_id = '$user_id'"; 
+    $res = mysqli_query($con, $query);
+    if(!$res) {
+      die('Query Failed'.mysqli_error());
+    }
+    return ($res);
+  }
+
+  function get_subscribed_user($con, $user_id) {
+    $query = "SELECT user_id FROM subscribed_users WHERE user_id = '$user_id'"; 
+    $res = mysqli_query($con, $query);
+    if(!$res) {
+      die('Query Failed'.mysqli_error());
+    }
+    return ($res);
+  }
+
+  function update_subscription($con, $user_id, $subscription_id) {
+    $query = "UPDATE subscribed_users SET subscription_id = '$subscription_id' WHERE user_id = '$user_id'";
+    $res = mysqli_query($con, $query);
+    if(!$res) {
+      die('Query Failed'.mysqli_error());
+    }
+  }
+
 ?>

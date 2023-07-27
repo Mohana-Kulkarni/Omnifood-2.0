@@ -9,9 +9,7 @@
   if(isset($_SESSION['cart'])) {
     
     $subscription_id = $_GET['id']; 
-
-    $user_id = get_user_details($con, $_SESSION['username']);
-    insert_subscription_details($con , $user_id, $subscription_id);    
+    check_subscription_exists($con , $_SESSION['username'], $subscription_id);    
     $my_obj = new stdClass();
     $my_obj->result = "ADD";
     echo json_encode($my_obj); 

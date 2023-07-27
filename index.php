@@ -62,7 +62,14 @@
           <a class="main-nav-link" href="#pricing"> Pricing</a>
         </li>
         <li>
-          <a class="main-nav-link nav-cta" href="#cta"> Try for free</a>
+          <a class="main-nav-link nav-cta" href="">
+          <?php 
+            if(isset($_SESSION['username'])) {
+              echo "Logout";
+            } else {
+              echo "Try for free";
+            }
+          ?> </a>
         </li>
       </ul>
     </nav>
