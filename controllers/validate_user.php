@@ -15,7 +15,7 @@
   }
 
   function isValidEmail($email) {
-    if(str_contains($email, ".com")) {
+    if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
       return true;
     } 
     return false;

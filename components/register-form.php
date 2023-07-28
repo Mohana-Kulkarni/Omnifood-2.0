@@ -30,7 +30,7 @@
 
     if(!$flag) {
       insertUserData($con, $username, $email, $password);
-      header("Location: ./login.php");
+      echo "<script>window.location.href='login.php';</script>";
     }
 
     // print_r($errors);
