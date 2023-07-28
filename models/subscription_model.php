@@ -56,4 +56,13 @@
     }
   }
 
+  function get_subscription_details_from_sub_id($con, $subscription_id) {
+    $query = "SELECT * FROM subscription WHERE id = $subscription_id"; 
+    $res = mysqli_query($con, $query);
+    if(!$res) {
+      die('Query Failed'.mysqli_error());
+    }
+    return ($res);
+  }
+
 ?>

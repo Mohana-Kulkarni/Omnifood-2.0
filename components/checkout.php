@@ -1,5 +1,11 @@
 <?php 
   include "components/coupons_overlay.php"; 
+
+  $sub_data = array();
+  if (isset($_SESSION['coupon-id'])) {
+    $sub_data = subscription_data_by_sub_id($con, $_SESSION['coupon-id']);
+  }
+  // print_r($sub_data);
 ?>
   
   <div class="checkout">
@@ -29,6 +35,20 @@
         <a onclick="on_coupons_overlay()" href="#" class="link">View all coupons &rarr;</a>
       </div>
 
+      <div id="applied_coupon">
+      <?php 
+        if (isset($_SESSION['coupon-id'])) {
+        ?>
+          <div class="coupon_tag" onclick="cancel_coupon()">
+            <p><?php echo strtoupper($sub_data['type']).$sub_data['discount'] ?></p>
+            <p>X</p>
+          </div>
+        <?php
+        }
+      ?>
+      </div>
+      
+
       <hr class="line">
 
       <div class="checkout-price">
@@ -37,7 +57,12 @@
           <?php
             if (isset($_SESSION['coupon-id'])) {
               $discount = get_discounts($con, $_SESSION['coupon-id']);
-              $discounted_price = $total_price - ($total_price * $discount)/100;
+              $max_limit = discount_max_limit($con, $_SESSION['coupon-id']);
+              $discounted_amount = ($total_price * $discount)/100;
+              if ($discounted_amount > $max_limit) {
+                $discounted_amount = $max_limit;
+              }
+              $discounted_price = $total_price - $discounted_amount;
               echo $discounted_price;
             } else {
               echo $total_price;

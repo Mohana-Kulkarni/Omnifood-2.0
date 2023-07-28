@@ -2,11 +2,13 @@
   include "db.php";  
   include "models/cart_model.php";
   include "models/meal_model.php";
+  include "models/coupons_model.php";
   include "controllers/cart_cntr.php";
   include "controllers/coupons_cntr.php";
   
   $addedMeals = $_SESSION['cart'];
   $all_cards = get_added_meals($con, $addedMeals); 
+
 
   $flag = true;
   if(count($all_cards) == 0) {

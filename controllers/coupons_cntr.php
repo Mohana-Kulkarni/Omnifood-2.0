@@ -31,4 +31,24 @@
         $subscription_details = mysqli_fetch_assoc($res);
         return $subscription_details;
     }
+
+    function discount_max_limit($con, $subscription_id) {
+        $res = get_discount_max_limit($con, $subscription_id);
+        while($row = mysqli_fetch_assoc($res)) {
+            $discount = $row['max_limit'];
+        }
+        return $discount;
+    }
+
+    function subscription_data_by_sub_id($con, $subscription_id) {
+        $res = get_subscription_details_from_sub_id($con, $subscription_id);
+        $data = array();
+        while ($row = mysqli_fetch_assoc($res)) {
+            $data['id'] = $row['id'];
+            $data['type'] = $row['type'];
+            $data['discount'] = $row['discount'];
+            $data['max_limit'] = $row['max_limit']; 
+        }
+        return $data;
+    } 
 ?>

@@ -4,6 +4,7 @@
   include "controllers/meal_cntr.php";
 
   $all_cards = meal_data($con);
+  // print_r($all_cards);
 
   foreach ($all_cards as $row) {
     $id = $row['id'];

@@ -54,11 +54,23 @@
     </li>
   </ul>
   <div class="plan-sign-up">
-    <button id="starter-btn" class="margin-right-sm subscription-btn" onclick="openOverlay('starter')"><?php  
-      if($subscription_id == 0) {
-        echo "Get Subscription";
-      } else if($subscription_id == 1){
-        echo "Already Subscribed";
+    <button id="starter-btn" class="margin-right-sm subscription-btn" onclick=
+    <?php 
+      if (isset($_SESSION['username'])) {
+        echo "openOverlay('starter')";
+      } else {
+        echo "login_redirect()";
+      }
+    ?>
+    ><?php
+      if (isset($_SESSION['username'])) {
+        if($subscription_id == 0) {
+          echo "Get Subscription";
+        } else if($subscription_id == 1){
+          echo "Already Subscribed";
+        } else {
+          echo "Get Subscription";
+        }
       } else {
         echo "Get Subscription";
       }
@@ -92,12 +104,23 @@
     </li>
   </ul>
   <div class="plan-sign-up">
-    <button id="complete-btn" class="margin-right-sm subscription-btn" onclick="openOverlay('complete')">
-    <?php  
-      if($subscription_id == 0) {
-        echo "Get Subscription";
-      } else if($subscription_id == 2){
-        echo "Already Subscribed";
+    <button id="complete-btn" class="margin-right-sm subscription-btn" onclick=
+    <?php 
+      if (isset($_SESSION['username'])) {
+        echo "openOverlay('complete')";
+      } else {
+        echo "login_redirect()";
+      }
+    ?>
+    ><?php 
+      if (isset($_SESSION['username'])) {
+        if($subscription_id == 0) {
+          echo "Get Subscription";
+        } else if($subscription_id == 2){
+          echo "Already Subscribed";
+        } else {
+          echo "Get Subscription";
+        }
       } else {
         echo "Get Subscription";
       }

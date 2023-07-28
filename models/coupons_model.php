@@ -16,7 +16,7 @@
         }
         return ($res);
     }
-    
+
     function get_subscription_data_by_id($con, $subscription_id) {
       $query = "SELECT * FROM subscription WHERE id = $subscription_id";
       $res = mysqli_query($con, $query);
@@ -24,5 +24,16 @@
         die('Query Failed'.mysqli_error());
       }
       return ($res);
-  }
+    }
+
+    function get_discount_max_limit($con, $subscription_id) {
+      $query = "SELECT max_limit FROM subscription WHERE id = $subscription_id";
+      $res = mysqli_query($con, $query);
+      if(!$res) {
+        die('Query Failed'.mysqli_error());
+      }
+      return ($res);
+    }
+
+
 ?>

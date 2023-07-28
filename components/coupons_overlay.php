@@ -1,5 +1,5 @@
 <?php 
-  include "models/coupons_model.php";
+  // include "models/coupons_model.php";
   include "models/subscription_model.php";
   include "controllers/subscription_cntr.php";
 
@@ -22,7 +22,7 @@
               $id = $subscription_details['id'];
               $title = $subscription_details['type'];
               $discount = $subscription_details['discount'];
-              $max_discount = 1000;
+              $max_discount = $subscription_details['max_limit'];
               $expiry_date = date('y-m-d');
               ?>
               <p class="checkout-title" >Best Offers For You</p>
@@ -34,7 +34,21 @@
                     <p class="coupon-sub-data">MAX &#8377;<?php echo $max_discount; ?></p>
                   </div>
                   <div class="coupon-apply-container">
-                    <button onclick="apply_discount(<?php echo $id; ?>)" class="coupon-apply">Apply</button>
+                    <button id="apply-coupon-btn" onclick="apply_discount(<?php echo $id; ?>)" class="coupon-apply"
+                    <?php 
+                      if (isset($_SESSION['coupon-id'])) {
+                        echo "disabled";
+                      }
+                    ?>
+                    >
+                      <?php 
+                        if (isset($_SESSION['coupon-id'])) {
+                          echo "Applied";
+                        } else {
+                          echo "Apply";
+                        }
+                      ?>
+                    </button>
                     <p class="coupon-sub-data">COUPON EXPIRES <?php echo $expiry_date; ?></p>
                   </div>
                 </div>

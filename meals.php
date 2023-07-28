@@ -29,7 +29,7 @@
 
 <body>
   <header class="header">
-    <a href="#">
+    <a href="index.php">
       <img class="logo" alt="Omnifood logo" src="img/omnifood-logo.png" />
     </a>
     <nav class="main-nav">

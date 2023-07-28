@@ -13,11 +13,18 @@
     $price = calculate_total_price($con, $_SESSION['cart'], $_SESSION['qty']);
 
     $discount = 0;
+    $max_limit = 0;
     if (isset($_SESSION['coupon-id'])) {
       $discount = get_discounts($con, $_SESSION['coupon-id']);
+      $max_limit = discount_max_limit($con, $_SESSION['coupon-id']);
     }
 
-    $total_price = $price - ($price * $discount) / 100;
+    $discounted_amount = ($price * $discount)/100;
+    if ($discounted_amount > $max_limit) {
+      $discounted_amount = $max_limit;
+    }
+
+    $total_price = $price - $discounted_amount;
 
     $my_obj = new stdClass();
     $my_obj->result = "SUCCESS"; 
@@ -47,11 +54,18 @@
       $price = calculate_total_price($con, $_SESSION['cart'], $_SESSION['qty']);
 
       $discount = 0;
+      $max_limit = 0;
       if (isset($_SESSION['coupon-id'])) {
         $discount = get_discounts($con, $_SESSION['coupon-id']);
+        $max_limit = discount_max_limit($con, $_SESSION['coupon-id']);
       }
 
-      $total_price = $price - ($price * $discount) / 100;
+      $discounted_amount = ($price * $discount)/100;
+      if ($discounted_amount > $max_limit) {
+        $discounted_amount = $max_limit;
+      }
+
+      $total_price = $price - $discounted_amount;
       
       $my_obj = new stdClass();
       $my_obj->result = "FAILURE"; 
