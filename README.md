@@ -59,7 +59,7 @@ Omnifood is an Online Food Ordering System that allows users to browse a variety
 - `database.sql`: SQL file with the database schema.
 
 ## Configuration
-1. Update the database credentials in `config.php` with your MySQL server information.
+- Update the database credentials in `db.php` with your MySQL server information.
 
 ## Contributing
 Contributions are welcome! If you'd like to contribute to Omnifood, please follow these steps:
