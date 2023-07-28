@@ -15,7 +15,6 @@ Omnifood is an Online Food Ordering System that allows users to browse a variety
 - [Project Structure](#project-structure)
 - [Configuration](#configuration)
 - [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 - [Acknowledgments](#acknowledgments)
 
@@ -49,7 +48,7 @@ Omnifood is an Online Food Ordering System that allows users to browse a variety
 - `login.php`: User login page.
 - `signup.php`: User registration page.
 - `meals.php`: Page displaying various dishes.
-- `cart.php`:Shopping cart page for users to review and place their orders.
+- `cart.php`: Shopping cart page for users to review and place their orders.
 - `components/`: Contains reusable code components.
 - `controllers/`: Contains PHP files handling the application's logic and business operations.
 - `models/`: Contains PHP files defining database models and interactions.
