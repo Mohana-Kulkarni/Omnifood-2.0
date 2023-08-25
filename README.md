@@ -68,7 +68,7 @@ Contributions are welcome! If you'd like to contribute to Omnifood, please follo
 3. Please adhere to the coding standards and write clear commit messages.
 
 ## Contact
-For any questions or feedback, feel free to reach out to us at contact@omnifood.com.
+For any questions or feedback, feel free to reach out to us at jpmware721@gmail.com.
 
 ## Acknowledgments
 - Hat tip to the PHP and MySQL community for the fantastic libraries and resources.
